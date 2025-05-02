@@ -22,7 +22,7 @@ body = json.dumps(
     }
 )
 
-# モデルを定義（Amazon Nova Pro）
+# モデルを定義（Amazon Nova Pro 東京リージョン）
 modelId = "apac.amazon.nova-pro-v1:0"
 
 # レスポンスを定義
