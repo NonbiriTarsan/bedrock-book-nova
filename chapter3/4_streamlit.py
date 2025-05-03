@@ -1,7 +1,11 @@
 # Pyhton外部モジュールのインポート
+import streamlit as st
 from langchain_aws import ChatBedrock
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_core.output_parsers import StrOutputParser
+
+# タイトル
+st.title("Bedrock チャット")
 
 # ChatBedrockを生成
 chat = ChatBedrock(
@@ -14,14 +18,21 @@ chat = ChatBedrock(
 # Nova特別対応：出力が生成したテキストになるようにStrOutputParserを追加
 chat = chat | StrOutputParser()
 
+
 # メッセージを定義
 messages = [
     SystemMessage(content="あなたのタスクはユーザーの質問に明確に答えることです。"),
-    HumanMessage(content="空が青いのはなぜですか？"),
 ]
 
-# Stream形式でモデル呼び出し
-for chunk in chat.stream(messages):
-    print(chunk, end="", flush=True)
+# チャット入力欄を定義
+if prompt := st.chat_input("何でも聞いてください。"):
+    # ユーザーの入力をメッセージに追加
+    messages.append(HumanMessage(content=prompt))
 
-print("")
+    # ユーザーの入力を画面表示
+    with st.chat_message("user"):
+        st.markdown(prompt)
+
+    # モデルの呼び出しと結果の画面表示
+    with st.chat_message("assistant"):
+        st.write_stream(chat.stream(messages))
