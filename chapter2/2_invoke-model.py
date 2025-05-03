@@ -6,7 +6,7 @@ import boto3
 session = boto3.Session(profile_name="admin")
 
 # Bedrockクライアントの作成
-bedrock = session .client("bedrock-runtime")
+bedrock = session.client("bedrock-runtime")
 
 # リクエストボディを定義
 body = json.dumps(
