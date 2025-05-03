@@ -6,5 +6,6 @@
 
 
 ### 書籍について
+以下の書籍で勉強し始めました。
 [Amazon Bedrock 生成AIアプリ開発入門](https://www.sbcr.jp/product/4815626440/)
 
