@@ -12,7 +12,7 @@ boto3_session = boto3.Session(profile_name="admin")
 # 検索手段を指定
 retriever = AmazonKnowledgeBasesRetriever(
     credentials_profile_name="admin", 
-    knowledge_base_id="F5WM1MCYXE",  # ここにナレッジベースIDを記載する
+    knowledge_base_id="XXXXXXX",  # ここにナレッジベースIDを記載する
     retrieval_config={"vectorSearchConfiguration": {"numberOfResults": 10}},
 )
 
