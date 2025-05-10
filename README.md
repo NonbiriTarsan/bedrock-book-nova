@@ -4,6 +4,8 @@
 
 利用ユーザは「IAM Identity Center」のSSOをboto3で使うように変更
 
+Pythonの実行環境は、Win11 、Vscode
+
 
 ### 書籍について
 以下の書籍で勉強し始めました。
