@@ -11,3 +11,11 @@ Pythonの実行環境は、Win11 、Vscode
 以下の書籍で勉強し始めました。
 [Amazon Bedrock 生成AIアプリ開発入門](https://www.sbcr.jp/product/4815626440/)
 
+
+
+### bot3でSSOではなく環境変数から取得する方法 メモ
+aws sso login --profile sandbox
+
+export AWS_PROFILE=sandbox
+
+
